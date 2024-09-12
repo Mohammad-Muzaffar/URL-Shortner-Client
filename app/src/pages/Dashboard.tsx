@@ -7,7 +7,7 @@ export const Dashboard: React.FC = () => {
 
     return (
         <div className="bg-[#FEF8EC]">
-            <div className="border-solid border-2 fixed bg-transparent top-0 w-screen">
+            <div className="border-solid border-2 sticky bg-[#FEF8EC] top-0 w-screen bg-opacity-70">
                 <Appbar />
             </div>
             <div className="text-[#112A46]">

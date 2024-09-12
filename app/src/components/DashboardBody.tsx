@@ -3,7 +3,7 @@ import { GenerateURL } from "./GenerateURL"
 export const DashboardBody: React.FC = () => {
     return(
         <div>
-            <div className="mt-32">
+            <div className="mt-16">
                 <GenerateURL />
             </div>
             <div>

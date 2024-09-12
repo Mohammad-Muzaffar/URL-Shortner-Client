@@ -34,7 +34,7 @@ export const Appbar: React.FC = () => {
 
     const logout = () =>{
         localStorage.removeItem("token");
-        navigate("/auth/sigin")
+        navigate("/auth/signin")
     }
 
     useEffect(()=>{

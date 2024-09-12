@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 // Tejas ->
-// Need to add generate new short url route and page and logout functionality
+// Need to add generate new short url route and page and logout functionality( use localStorage.clear('token'))
 
 export const Appbar: React.FC = () => {
     const [user, setUser] = useState("");

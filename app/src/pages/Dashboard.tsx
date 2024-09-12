@@ -6,11 +6,11 @@ import { DashboardBody } from "../components/DashboardBody";
 export const Dashboard: React.FC = () => {
 
     return (
-        <div>
+        <div className="bg-[#FEF8EC]">
             <div className="border-solid border-2 fixed bg-transparent top-0 w-screen">
                 <Appbar />
             </div>
-            <div className="">
+            <div className="text-[#112A46]">
                 <DashboardBody />
             </div>
         </div>

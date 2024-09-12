@@ -5,7 +5,7 @@ export const Signup: React.FC = () => {
 
     return (
         <div className="grid grid-cols-12">
-            <div className="col-span-6">
+            <div className="col-span-6 text-[#112A46]">
                 <SignupComponent />
             </div>
             <div className="col-span-6">

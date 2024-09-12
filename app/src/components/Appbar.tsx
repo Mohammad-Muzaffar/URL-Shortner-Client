@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import logo from '../assets/logo.png';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { BACKEND_URL } from '../config';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 // Tejas ->
@@ -10,7 +10,8 @@ import { Link } from 'react-router-dom';
 
 export const Appbar: React.FC = () => {
     const [user, setUser] = useState("");
-    
+    const navigate = useNavigate()
+
     async function sendRequest() {
         try{
             const response = await axios.get(`${BACKEND_URL}/api/v1/users/user`,{
@@ -18,9 +19,16 @@ export const Appbar: React.FC = () => {
                     authorization: localStorage.getItem('token')
                 }
             });
-            setUser(response.data.userName);
-        } catch(error){
-            console.log(error);
+            if(response.status === 200){
+                setUser(response.data.userName);
+            }
+        } catch(error: AxiosError | any){
+            if(axios.isAxiosError(error)){
+                console.log(error.response?.data.message);
+                localStorage.clear();
+                alert("Unauthorized");
+                navigate('/auth/signin')
+            }
         }
     }
 
